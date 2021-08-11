@@ -1,0 +1,226 @@
+{% extends "layout.html" %}
+
+
+{% block style %}
+<!-- style -->
+<style type="text/css">
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-style: bold;
+    box-sizing: border-box;
+    font-family: Georgia, serif;
+}
+
+body{
+    display:flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    flex-direction:column;
+    /*padding: 3px 200px;*/
+    height:300px;
+    background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(127,255,212,1)35%, rgba(0,212,255,1)100% );
+}
+h1{ 
+    position: relative;
+    margin: 5px;
+    font-size: 35px;
+    text-align: center;
+    color: #000;
+}
+
+.style{
+    position: relative;
+    width: 1500px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px;
+    margin: 10px;
+}
+
+.style .card {
+    position: relative;
+    max-width: 330px;
+    height: 420px;
+    background: none;
+    margin: 30px 10px;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 202px rgb(255, 255, 255);
+    transition: 0.3s ease-in-out;
+}
+
+.style .card:hover{
+    height: auto;
+    width: auto;
+}
+
+.style .card .image {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    top: -60px;
+    left: 20px;
+    z-index: 1;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+}
+
+.style .card .image img{
+    max-width: 100%;
+    border-radius: 4px;
+} 
+
+h2{
+    text-align: center;
+    background: none;
+}
+
+.style .card .content{
+    position: relative;
+    margin-top: -200px;
+    padding: 10px 15px;
+    text-align: center;
+    color: #000;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.style .card:hover .content{
+    visibility: visible;
+    opacity: 1;
+    margin-top: 60px;
+    transition-delay: 0.3s;
+}
+
+</style>
+
+{% endblock %}
+
+{% block content %}
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta charset="utf-8">
+<h1>Styles</h1>
+<div class="style">
+    <div class="card">
+        <div class="image">
+            <img src="{{url_for('static',filename='inc.jpg')}}" >
+        </div>
+        <div class="content">
+            <h2>Indian Classical</h2>
+            <p>Indian Classical Dance is one of the most comprehensive and oldest dance forms in the world.
+                Most of the development of Indian dance is linked to the 2nd century B.C. treatise. 
+                This treatise, Bharata’s Natyashastra, is the most important source for establishing the characteristics of Indian dance and drama. 
+                The Natyashastra lays down two aspects of dance Nritta- pure dance and Nitrya- interpretative dance. 
+                Nritta is the expression of rhythmic movement primarily through use of the hands and feet often in specific poses. 
+                Nritya uses gestures and facial expressions to show the poetic or emotional meaning while combining rhythmic gaits and postures.</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="image">
+            <img src="{{url_for('static',filename='contem2.jpg')}}" >
+        </div>
+        <div class="content">
+            <h2>Contemporary</h2>
+            <p> Contemporary dance is a style of expressive dance that combines elements of several dance genres including modern, jazz, lyrical and classical ballet. Contemporary dancers strive to connect the mind and the body through fluid dance movements. The term "contemporary" is somewhat misleading: it describes a genre that developed during the mid-21th century and is still very popular today. </p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="image">
+            <img src="{{url_for('static',filename='hiphop.jpg')}}" >
+        </div>
+        <div class="content">
+            <h2>Hip-Hop</h2>
+            <p>Hip Hop Dance is a style of movement characterized by bounces and rocks executed to Hip Hop music. It has deep historical and social roots in African American culture, having emerged in Black communities living in 1970s New York. While frequently referred to as a singular dance style, Hip Hop dance is part of a whole culture of Hip Hop, that includes Deejaying, Graffiti, Emceeing, and several sub-styles of dance, including Breaking. Hip Hop is a movement that represents the freedom to learn, grow, and evolve.</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="image">
+            <img src="{{url_for('static',filename='bollyw.jpg')}}" >
+        </div>
+        <div class="content">
+            <h2>Bollywood</h2>
+            <p>
+                Bollywood Dance is the name given to the dance-form used in Indian (Hindi) films. Bollywood Dance style is a fusion of various dance styles. It includes Bharatanatyam, Kathak, Bhangra, Jazz, Hip-hop, Arabic, Western dance to name a few. Classical Indian dance incorporates the two basic elements of dance and expression. Over the years Bollywood movies have developed their own signature style of song and dance, which combines the rich texture of India's many classical and folk dances, fused with elements of Jazz, Hip – Hop, Arabic and Latin Forms.</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="image">
+            <img src="{{url_for('static',filename='indo.jpg')}}" >
+        </div>
+        <div class="content">
+            <h2>Indo Jazz</h2>
+            <p> Indo jazz is a musical genre consisting of jazz, classical and Indian influences. Its structure and patterns are based on Indian music with typical jazz improvisation overlaid. While the term itself may be comparatively recent, the concept dates at least to the mid-1950s. Musicians including John Coltrane, Yusef Lateef and others reflect Indian influences. </p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="image">
+            <img src="{{url_for('static',filename='jaz.jpg')}}" >
+        </div>
+        <div class="content">
+            <h2>Jazz</h2>
+            <p> Jazz Dance is a rhythmic stylized dance form with roots in America. Jazz is a blend of traditions in which the European influence of elegance and the African influence of rhythmic propulsion results in an energetic and exhilarating class of rhythmic and dynamic movement. </p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="image">
+            <img src="{{url_for('static',filename='folk1.jpg')}}" >
+        </div>
+        <div class="content">
+            <h2>Folk</h2>
+            <p> A folk dance is a dance developed by people that reflect the life of the people of a certain country or region. For example, ritual dances or dances of ritual origin are not considered to be folk dances. Ritual dances are usually called "Religious dances" because of their purpose. </p> 
+        </div>
+    </div>
+    <div class="card">
+        <div class="image">
+            <img src="{{url_for('static',filename='fit.jpg')}}" >
+        </div>
+        <div class="content">
+            <h2>Fitness Session</h2>
+            <p> First and foremost, dance fitness stands out from technical or traditional dance in that technique and intricate choreography aren't the main focus. Participants don't spend weeks or months perfecting a single routine in anticipation of a show or recital; rather, they show up, work up a sweat while doing their best to follow an instructor, and leave feeling good about their workout.
+                Fitness training balances five elements of good health. Make sure your routine includes aerobic fitness, strength training, core exercises, balance training, and flexibility and stretching. </p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="image">
+            <img src="{{url_for('static',filename='silk2.jpg')}}" >
+        </div>
+        <div class="content">
+            <h2>Aerial Silk</h2>
+            <p> Aerial silks (also known as aerial contortion, aerial ribbons, aerial tissues, fabric, ribbon, or tissu, depending on personal preference) is a type of performance in which one or more artists perform aerial acrobatics while hanging from a fabric. The fabric may be hung as two pieces, or a single piece, folded to make a loop, classified as hammock silks. Performers climb the suspended fabric without the use of safety lines and rely only on their training and skill to ensure safety. They use the fabric to wrap, suspend, drop, swing, and spiral their bodies into and out of various positions. Aerial silks may be used to fly through the air, striking poses and figures while flying. Some performers use dried or spray rosin on their hands and feet to increase the friction and grip on the fabric </p> 
+        </div>
+    </div>
+    <div class="card">
+        <div class="image">
+            <img src="{{url_for('static',filename='hoop1.jpg')}}" >
+        </div>
+        <div class="content">
+            <h2>Aerial Hoop</h2>
+            <p> The aerial hoop (also known as the lyra, aerial ring or cerceau/cerceaux) is a circular steel apparatus (resembling a hula hoop) suspended from the ceiling, on which circus artists may perform aerial acrobatics. It can be used static, spinning, or swinging. Tricks that can be performed include the Candlestick, Bird's Nest and Crescent Moon </p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="image">
+            <img src="{{url_for('static',filename='salsa1.jpg')}}" >
+        </div>
+        <div class="content">
+            <h2>Salsa</h2>
+            <p> Salsa is a Latin dance associated with the music genre of the same name which was first popularized in the United States in the 1960s in New York City. Salsa is an amalgamation of Cuban dances such mambo, pachanga, and rumba as well as American dances such as swing and tap. </p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="image">
+            <img src="{{url_for('static',filename='roll.jpg')}}" >
+        </div>
+        <div class="content">
+            <h2>Rock & Roll</h2>
+            <p> Acrobatic Rock'n'Roll is a very athletic, competitive form of partner dance that originated from lindy hop. Unlike lindy hop, however, it is a choreographed dance designed for performance. It is danced by both couples (usually of mixed gender) and groups, either all-female or four to eight couples together. This is normally a very fast and physically demanding dance. </p>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

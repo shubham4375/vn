@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+
+
+{% block style %}
+	<!-- style -->
+<style type="text/css">
+*{
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	font-style: bold;
+	box-sizing: border-box;
+    font-family: Georgia, serif;
+}
+
+body{
+    display:flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    flex-direction:column;
+    /*padding: 3px 200px;*/
+    height:300px;
+    background: linear-gradient(90deg, rgba(255,160,122,1) 0%, rgb(255, 255, 129, 1)65%, rgba(255,160,122,1)100% );
+}
+
+h1{
+    margin: 10px;
+	color: black;
+	font-size: 60px;
+    text-align: center;
+}
+
+.vi{
+    margin: 5px;
+}
+
+.video-main{
+    margin-left: 190px;
+}
+
+.video{
+    width: 550px;
+    padding: 50px;   
+}
+
+.button{
+	font-size: 22px;
+    font-family: 'Courier New', sans-serif;
+	position: absolute;
+	top: 15%;
+	left: 13%;
+	transform: translate(-50%,-50%);
+}
+
+.btn{
+	position: relative;
+	display: inline-block;
+	font-weight: bold;
+	padding: 12px 36px;
+	margin: 10px 0;
+	color: black;
+	text-transform: uppercase;
+	text-decoration: none;
+	transition: 0.6s ease;
+	font-size: 18px;
+	letter-spacing: 2px;
+	border-radius: 40px;
+	background: rgb(127, 255, 206,1)
+}
+
+.btn:hover{
+	background: linear-gradient(90deg, rgb(250, 142, 147,1) 0%, rgb(127, 255, 206,1)35%, rgb(247, 125, 125,1)100% );
+}
+
+</style>
+{% endblock %}
+
+
+
+{% block content %}
+
+	<h1>V & N Entertainment</h1>
+
+<div class="vi">  
+    <div class="video-main">
+        <video class="video" src="{{url_for('static',filename = 'd1.mp4')}}" controls>
+            <h1>V & N Entertainment</h1>
+        </video>
+        <video class="video" src="{{url_for('static',filename = 'd2.mp4')}}" controls></video>
+        <video class="video" src="{{url_for('static',filename = 'workshop.mp4')}}" controls></video>
+        <video class="video" src="{{url_for('static',filename = 'd4.mp4')}}" controls></video>
+        <video class="video" src="{{url_for('static',filename = 'd5.mp4')}}" controls></video>
+        <video class="video" src="{{url_for('static',filename = 'd6.mp4')}}" controls></video>
+    </div>
+</div>
+<div class="button">
+	<a href="{{url_for('event')}}" class="btn">Event</a> 
+	<a href="{{url_for('workshop')}}" class="btn">Workshop</a> 
+</div>
+{% endblock %}

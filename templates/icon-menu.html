@@ -1,0 +1,112 @@
+
+<!-- /#wrapper -->
+<!-- Menu Toggle Script -->
+{% extends "layout2.html" %}
+{% block style %}
+  <!-- style -->
+<style type="text/css">
+
+</style>
+{% endblock %}
+
+{% block content %}
+<div id="main-page-content">
+  <div class="container-fluid">
+    <h1>Welcome admin</h1>
+    <div class="row">
+      <div class="col-lg-12" >
+        <div class="panel panel-default">
+          <div class="panel-heading">Details</div>
+          <div class="panel-body" id="feature-content">
+            <div class="col-md-4" style="margin-left: 20%;">
+              <div class="panel panel-primary">
+                <div class="panel-body text-center">
+                  <span class="flaticon-menu" style="display: block; "></span>
+                  <h3 class="paneltext">Total Login </h3>
+                  <span class="paneltext" style="font-size: 22px;" >{{signupcount}}</span>
+                </div>
+              </div>
+            </div>
+              <div class="col-md-4">
+              <div class="panel panel-primary">
+                <div class="panel-body text-center">
+                  <span class="flaticon-menu" style="display: block; "></span>
+                  <h3 class="paneltext">Total Registrations </h3>
+                  <span class="paneltext" style="font-size: 22px;" >{{registrationcount}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">Batch Details</div>
+      <div class="panel-body" id="feature-content">
+        <div class="col-md-4">
+          <div class="panel panel-primary">
+            <div class="panel-body text-center">
+              <span class="flaticon-menu" style="display: block; "></span>
+              <h3 class="paneltext"> Kids Details</h3>
+              <span class="paneltext" style="font-size: 22px;" >{{kidscount}}</span>
+            </div>
+          </div>
+        </div>
+          <div class="col-md-4">
+          <div class="panel panel-primary">
+            <div class="panel-body text-center">
+              <span class="flaticon-menu" style="display: block; "></span>
+              <h3 class="paneltext">Junior Details</h3>
+              <span class="paneltext" style="font-size: 22px;" >{{juniorcount}}</span>
+            </div>
+          </div>
+          </div>
+          <div class="col-md-4">
+            <div class="panel panel-primary">
+              <div class="panel-body text-center">
+                <span class="flaticon-menu" style="display: block; "></span>
+                <h3 class="paneltext"> Adult Details</h3>
+                <span class="paneltext" style="font-size: 22px;" >{{adultcount}}</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="panel panel-primary">
+              <div class="panel-body text-center">
+                <span class="flaticon-menu" style="display: block; "></span>
+                <h3 class="paneltext"> Women Details</h3>
+                <span class="paneltext" style="font-size: 22px;" >{{womencount}}</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+          <div class="panel panel-primary">
+            <div class="panel-body text-center">
+              <span class="flaticon-menu" style="display: block; "></span>
+              <h3 class="paneltext">Fitness Details </h3>
+              <span class="paneltext" style="font-size: 22px;" >{{fitnesscount}}</span>
+            </div>
+          </div>
+          </div>
+          <div class="col-md-4">
+            <div class="panel panel-primary">
+              <div class="panel-body text-center">
+                <span class="flaticon-menu" style="display: block; "></span>
+                <h3 class="paneltext">Couple Details </h3>
+                <span class="paneltext" style="font-size: 22px;" >{{couplecount}}</span>
+              </div>
+            </div>
+          </div>    
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+
+  
+  

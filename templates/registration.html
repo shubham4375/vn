@@ -1,0 +1,382 @@
+{% extends "layout.html" %}
+
+
+{% block style %}
+<style type="text/css">
+
+*{
+	margin: 0;
+	padding: 0;
+	font-style: bold;
+	box-sizing: border-box;
+	font-family: Georgia, serif; 
+}
+
+/*regi part*/
+body{
+	display:flex;
+	flex-direction:column;
+	/* padding: 3px 200px; */
+	height:300px;
+	/* justify-content:center; */
+	background-color: black;
+	/*align-items: center;*/
+	background: linear-gradient(90deg, rgba(255,160,122,1) 0%, rgb(255, 255, 129, 1)65%, rgba(255,160,122,1)100% );
+}
+
+/* body::before{
+	content: "";
+	position:absolute;
+	/* background:url("{{url_for('static',filename='regi.jpg')}}") no-repeat center center/cover; */
+	/* height: 100%;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	width: 100%;
+	z-index:-1;
+	opacity: 0.95;
+}  */
+
+.mar{
+	margin-top: 5px;
+}
+
+.regform{
+	width: 800px;
+	/* background-color: rgb(230,230,250,0.6); */
+	margin: auto;
+	color: black;
+	font-size: 20px;
+	padding: 15px 0px 15px 0px;
+	text-align: center;
+	border-radius: 15px 15px 0px 0px;
+}
+
+.main{
+	/* background-color: rgb(200,200,200,0.5); */
+	width: 800px;
+	margin: auto;
+}
+
+form{
+	padding: 15px;
+}
+
+.name1{
+	background:none;
+	margin-left: 25px;
+	margin-top: 15px;
+	width: 100px;
+	color: black;
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.name{
+	background:none;
+	position: relative;
+	left: 200px;
+	top: -37px;
+	line-height: 40px;
+	width: 480px;
+	/* border-radius: 6px; */
+	padding:0 22px;
+	font-size: 16px;
+}
+
+/* .name{
+	background:none;
+	position: relative;
+	left: 200px;
+	top: -37px;
+	line-height: 40px; 
+	border-radius: 6px;
+	padding: 0 18px;
+	font-size: 16px;
+} */
+
+/* 
+.lname{
+	background:none;
+	position: relative;
+	left: 370px;
+	top: -81px;
+	line-height: 40px;
+	/* border-radius: 6px; */
+	/* padding: 0 18px;
+	font-size: 16px;
+}  */
+/* 
+.flabel{
+	background:none;
+	position: relative;
+	color: Gray;
+	font-weight: 600;
+	text-transform: capitalize;
+	font-size: 16px;
+	left: 203px;
+	top: -45px;
+}
+
+
+.llabel{
+	background:none;
+	position: relative;
+	color: Gray;
+	font-weight: 600;
+	text-transform: capitalize;
+	font-size: 16px;
+	left: 469px;
+	top: -75px;
+}
+
+ */
+.address{background:none;
+	position: relative;
+	left: 200px;
+	top: -37px;
+	line-height: 40px;
+	width: 480px;
+	/* border-radius: 6px; */
+	padding:0 22px;
+	font-size: 16px;
+}
+.email{
+	background:none;
+	position: relative;
+	left: 200px;
+	top: -37px;
+	line-height: 40px;
+	width: 480px;
+	/* border-radius: 6px; */
+	padding:0 22px;
+	font-size: 16px;
+}
+.number{
+	background:none;
+	font-weight: bold;
+	position: relative;
+	left: 202px;
+	top: -47px;
+	line-height: 40px;
+	width: 480px;
+	/* border-radius: 6px; */
+	padding:0 22px;
+	font-size: 16px;
+}
+/* .phone_number{
+	position: relative;
+	color: black;
+	font-weight: 700;
+	text-transform: capitalize;
+	font-size: 16px;
+	left: 203px;
+	top: -45px;
+} */
+.gender{
+	position: relative;
+	left: 200px;
+	top: -37px;
+	line-height: 40px;
+	width: 480px;
+	height: 40px;
+	border-radius: 6px;
+	padding:5px;
+	font-size: 16px;
+	color: Gray;
+	outline: none;
+	overflow: hidden;
+}
+select{
+	background : none;
+	font-weight: bold;
+}
+select option{
+	color: black;
+	font-weight: bold;
+}
+.style{
+	position: relative;
+	left: 200px;
+	top: -37px;
+	line-height: 40px;
+	width: 480px;
+	height: 40px;
+	border-radius: 6px;
+	padding:5px;
+	font-size: 16px;
+	color: Gray;
+	outline: none;
+	overflow: hidden;
+}
+#student{
+	margin-left: 25px;
+	margin-top: 5px;
+	color: black;
+	font-size: 20px;
+}
+
+.ans{
+	position: relative;
+	left: 252px;
+	top: -58px;
+	line-height: 40px;
+	width: 428px;
+	height: 40px;
+	border-radius: 6px;
+	padding:5px;
+	font-size: 16px;
+	color: Gray;
+	outline: none;
+	overflow: hidden;
+}
+
+.age{
+	position: relative;
+	left: 200px;
+	top: -37px;
+	line-height: 40px;
+	width: 480px;
+	height: 40px;
+	border-radius: 6px;
+	padding:5px;
+	font-size: 16px;
+	color: Gray;
+	outline: none;
+	overflow: hidden;
+}
+
+/* .radio{ 
+	display: inline-block;
+	padding-right: 70px;
+	font-size: 20px;
+	margin-left: 2px;
+	margin-top: 1px;
+	color: Gray;
+	font-weight: 600;
+}
+.radio input{
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	cursor: pointer;
+	outline: none;
+	transition: 0.25px;
+} */
+button{
+	font-size: 22px;	
+	position: relative;
+	font-weight: bold;
+	font-family: 'Courier New', sans-serif;
+}
+.btn2{
+	position: relative;
+	cursor: pointer;
+	display: inline-block;
+	text-align: center;
+	/* text-transform: uppercase; */
+	/* text-decoration: none; */
+	letter-spacing: 1px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 2px /*solid black*/;
+    left: -120px;
+    top: 15px;
+    padding: 17px 64px;
+    margin: 12px 1px 12px 0;
+    transition: 0.6s ease;
+    background: silver;
+    color: #000
+	/* color: black;
+	background: linear-gradient(90deg, #0162c8,#55e7fc); */
+}
+.btn2:hover{
+	/* background: linear-gradient(90deg, #755bea,#ff72c0); */
+	background-color: black;
+	color: white;
+}
+.mssg{
+	color: black;
+	margin-top: 10px;
+}
+</style>
+{% endblock %}
+{% block content %}
+	<!-- regi page -->
+<div class="mar">
+<div class="regform"><h1>Enrollment Form</h1></div>
+<div class="main">
+	<form action="{{url_for('registration')}}" method="POST">
+		<div class="mssg">{{msg}}</div>
+		<h2 class="name1">Name</h2>
+		<input class="name" type="text" name="name" value="{{session['username']}}" required>
+		<!-- <div id="name">
+			<h2 class="name">Name</h2>
+			<input class="fname" type="text" name="f_name"><br>
+			<label class="flabel">First Name</label>
+			<input class="lname" type="text" name="l_name"><br>
+			<label class="llabel">Last Name</label>
+		</div> -->
+		<h2 class="name1">Address</h2>
+		<input class="address" type="text" name="address" required>
+		<h2 class="name1">Email</h2>
+		<input class="email" type="text" name="email" value="{{session['email']}}">
+		<h2 class="name1">Phone</h2>
+		<input class="number" type="text" name="phone_number"><br>
+		<!-- <label class="phone_number">Phone Number</label> -->
+		<h2 id="student">Gender</h2>
+		<select class="gender" type="gender" name="gender">
+			<option disabled="disabled" selected="selected">Gender</option>
+			<option>Male</option>
+			<option>Female</option>
+			<option>Other</option>
+		</select>
+
+		
+		<h2 id="student">Age</h2>
+		<select class="age" type="age" name="age">
+			<option disabled="disabled" selected="selected">Select Your Age</option>
+			<option>For Kid -> 3 to 8</option>
+			<option>For Junior -> 9 to 16</option>
+			<option>For Adult -> Above 16</option>
+			<option>Women</option>
+		</select>
+		
+		<h2 id="student">Style</h2>
+		<select class="style" type="style" name="style">
+			<option disabled="disabled" selected="selected">Choose Your Styles</option>
+			<option>Indian Classical</option>
+			<option>Contemporary</option>
+			<option>Bollywood</option>
+			<option>Hip-Hop</option>
+			<option>Salsa</option>
+			<option>Rock & Roll</option>
+			<option>Jazz</option>
+			<option>Indo Jazz</option>
+			<option>Folk</option>
+			<option>Aerial Silk</option>
+			<option>Aerial Hoop</option>
+			<option>Fitness Sessions</option>
+		</select>
+
+		<h2 id="student">Are you beginner ?</h2>
+		<select class="ans" type="beginner" name="beginner">
+			<option disabled="disabled" selected="selected">Yes Or No</option>
+			<option>Yes</option>
+			<option>No</option>
+		</select>
+		<!-- <label class="radio">
+			<input class="radio-one" type="radio" checked="checked" name="">
+			<span class="checkmark"></span>
+			Yes
+		</label>
+		<label class="radio">
+			<input class="radio-two" type="radio" name="">
+			<span class="checkmark"></span>
+			No
+		</label> -->
+		<button class="btn2" type="sumbit" value="sumbit">Sumbit</button>
+	</form>
+</div>
+</div>
+{% endblock %}

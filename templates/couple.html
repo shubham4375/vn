@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+
+{% block style %}
+	<!-- style -->
+<style type="text/css">
+*{
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	font-style: bold;
+	box-sizing: border-box;
+    font-family: Georgia, serif;
+    cursor: pointer;
+}
+
+h2{
+    color: white;
+    font-size: 40px;
+    margin: 25px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.time{
+    color: white;
+    text-align: center;
+    margin: 120px 0;
+}
+
+h3{
+    font-size: 33px;
+}
+
+.select{
+	width: 61%;
+    margin: 5px 440px;
+    padding: 0;
+    list-style-type: none;
+	margin-top: 95px;
+}
+
+
+input{
+	display: inline-block;
+	list-style: none;
+    font-size: 1.3rem;
+}
+
+input{
+    margin-right: 30%;
+    font-size: 18px;
+	text-decoration: none;
+	color: #fff;
+	background: #000;
+	padding: 10px 30px;
+	border: 1px solid white;
+	transition: 0.6s ease;
+	font-weight: bold;
+}
+
+input:hover{
+	background-color: #fff;
+	color: #000;
+}
+
+body{
+    display:flex;
+    flex-direction:column;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    /*padding: 3px 200px;*/
+    height:300px;
+    /*justify-content:center;*/
+    /*align-items: center;*/
+}
+
+body::before{content: "";
+    position: absolute;
+    background:url("{{url_for('static',filename='batch.jpg')}}") no-repeat center center/cover;
+    height: 100%;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    z-index:-1;
+    /* opacity: 0.89; */
+}
+
+</style>
+{% endblock %}
+
+{% block content %}
+
+<h2>Couple Batch</h2>
+<div class="time">
+    <form action="{{ url_for('addbatchtime') }}" method="POST">
+        <div class="mssg">{{ msg }}</div>
+        <h3>Select Batch time</h3>
+        <div class="select">
+
+                {%for product in coupledata%}
+
+                <input type="submit" readonly value="{{ product.couplebatchtime }}" name="batchtime">
+                {% endfor %}
+
+        </div>
+    </form>
+</div>
+  
+{% endblock %}

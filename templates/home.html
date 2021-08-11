@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+
+
+{% block style %}
+<style type="text/css">
+
+*{
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	font-style: bold;
+	box-sizing: border-box;
+	font-family: Georgia, serif;
+}
+
+body{
+    display:flex;
+    flex-direction:column;
+    /*padding: 3px 200px;*/
+    height:300px;
+    /*justify-content:center;*/
+    /*align-items: center;*/
+}
+
+body::before{content: "";
+    position: absolute;
+    background:url("{{url_for('static',filename='23.jpg')}}") no-repeat center center/cover;
+    height: 100%;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    z-index:-1;
+    opacity: 0.99;
+}
+
+.title{
+	position: absolute;
+	top: 25%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.title h1{
+	color: black;
+	font-size: 70px;
+    text-align: center;
+  font-family: "Trirong", serif;
+}
+
+.button{
+	font-size: 22px;
+    font-family: 'Courier New', sans-serif;
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.btn{
+	position: relative;
+	display: inline-block;
+	font-weight: bold;
+	padding: 12px 36px;
+	margin: 10px 0;
+	color: black;
+	text-transform: uppercase;
+	text-decoration: none;
+	transition: 0.6s ease;
+	font-size: 18px;
+	letter-spacing: 2px;
+	border-radius: 40px;
+	background: linear-gradient(90deg, rgb(250, 142, 147,1) 0%, rgb(127, 255, 206,1)35%, rgb(247, 125, 125,1)100% );
+}
+
+.btn:hover{
+	background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgb(247, 125, 125,1)0%, rgba(0,212,255,1)100% );
+}
+
+.slogan{
+	position: absolute;
+	top: 35%;
+	left: 75%;
+	transform: translate(-50%,-50%);
+}
+
+.slogan h1{
+	text-align: center;
+    letter-spacing: 1px;
+	color: black;
+	font-size: 40px;
+  font-family: 'Brush Script MT', cursive;
+}
+
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- name of vn -->
+<div class="title">
+	<link rel="stylesheet" href="{{url_for('home')}}">
+	<h1>V & N Entertainment</h1>
+</div>
+<div class="slogan">
+<h1>Dance your soul away...</h1>
+</div>
+<div class="button">
+	<a href="{{url_for('video')}}" class="btn">Video</a> 
+	<a href="{{url_for('event')}}" class="btn">Event</a> 
+	<a href="{{url_for('workshop')}}" class="btn">Workshop</a> 
+</div>
+
+{% endblock %}

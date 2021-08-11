@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block style %}
+	<title>Style</title>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+	<!-- style -->
+
+
+    {% endblock %}
+<style type="text/css">
+
+/*header part*/
+*{
+	font-family: Georgia, serif;
+}
+
+header{
+	height: 70px;
+	background: #262626;
+	padding: 0 40px;
+}
+
+.logo img{
+	filter: brightness(200%);
+	width: 6%;
+	position: absolute;
+	margin-top: -7PX;
+	margin-left: 10PX;
+}
+
+nav{
+	width: 90%;
+	float: right;
+}
+
+nav ul{
+	float: left;
+	list-style-type: none;
+	margin-top: 20px;
+    margin-right: 40px;
+}
+
+nav ul li{
+	display: inline-block;
+	list-style: none;
+    font-size: 1.3rem;
+}
+
+nav ul li a{font-size: 18px;
+	text-decoration: none;
+	color: #fff;
+	padding: 5px 20px;
+	border: 1px solid transparent;
+	transition: 0.6s ease;
+	font-weight: bold;
+}
+
+nav ul li a:hover{
+	background-color: #fff;
+	color: #000;
+}
+
+
+
+header nav .login button{
+	border: 2px solid #262626;
+	background: none;
+	padding: 10px 42px;
+	font-size: 22px;
+	font-weight: 700; 
+	font-family: 'Courier New', sans-serif;
+	cursor: pointer;
+	outline: none;
+	margin: 10px;
+}
+.btn a{
+	text-decoration:none;
+}
+
+header nav .login button:hover{
+	background-color: #000;
+	color: #fff;
+}
+
+header nav .login{
+	max-width: 38%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+/* 
+footer{
+	background-color: black;
+	height: auto;
+	width: 100vw;
+	padding-top: 40px;
+	color: #fff;
+}
+
+.footer-content{
+	display: flex;
+	text-align: center;
+	flex-direction: column;
+}
+
+.footer-content h2{
+	font-size: 1.8rem;
+	font-weight: 400;
+	text-transform: capitalize;
+	line-height: 3rem;
+}
+
+.footer-content p{
+	max-width: 1000px;
+	margin: 1px auto;
+	line-height: 28px;
+	font-size: 18px;
+}
+
+.social{
+    display: flex;
+    margin-top: 80px;
+	position: relative;
+	top: 50%;
+	left: 70%;
+	transform: translate(-50%,-50%);
+}
+
+.social li{
+    list-style: none;
+    margin-right: 15px;
+}
+
+.social li a{
+    text-decoration: none;
+}
+
+.social li a img{
+    filter: invert(1);
+    opacity: 0.5;
+}
+
+.social li:hover a img{
+    opacity: 1;
+}
+ */
+</style>
+
+</head>
+<body>
+	<!-- header part -->
+<header>
+	<div class="logo">
+		<a href="{{url_for('home')}}"><img src="{{url_for('static',filename='vn.png')}}"></a>
+	</div>
+	<nav>
+		<ul>
+			{% if session['alreadyregistered'] and session['alreadybatchconfirm'] == True %}
+				<li><a href="{{url_for('home')}}">Home</a></li>
+				<li><a href="{{url_for('event2')}}">Registration</a></li>
+				<li><a href="{{url_for('style')}}">Styles</a></li>
+				<li><a href="{{url_for('event2')}}">Batches</a></li>
+				<li><a href="{{url_for('about')}}">About Us</a></li>
+				<li><a href="{{url_for('contact')}}">Contact Us</a></li>
+			{% else %}
+				<li><a href="{{url_for('home')}}">Home</a></li>
+				<li><a href="{{url_for('registration')}}">Registration</a></li>
+				<li><a href="{{url_for('style')}}">Styles</a></li>
+				<li><a href="{{url_for('batches')}}">Batches</a></li>
+				<li><a href="{{url_for('about')}}">About Us</a></li>
+				<li><a href="{{url_for('contact')}}">Contact Us</a></li>
+			{% endif %}
+		</ul>
+		<div class="login">
+		<!--	<button class="btn"><a href="{{url_for('logout')}}" style="color: white;">Log Out</a></button>
+			<button class="btn"><a href="{{url_for('login')}}" style="color: white;">Login</a></button>-->
+			{% if  'loggedin' in session %}
+			<button class="btn"><a href="{{url_for('logout')}}" style="color: white;">Log Out</a></button>
+			{% else %}
+			<button class="btn"><a href="{{url_for('loginsector')}}" style="color: white;">Login</a></button>
+			{% endif %}	
+		</div>
+	</nav>
+</header>
+<!-- <footer>
+	<div class="footer-content">
+		<h2>V & N Entertainment</h2>
+		<p>Every day brings a chance for you to draw in a breath, kick off your shoes and dance. Dancing is surely the most basic of relevant of all forms of expression. Nothing else can so effectively give outward form to an inner experience. </p>
+		<ul class="social">
+			<li><a href="#"><img src="https://img.icons8.com/ios/50/000000/facebook-new.png"/></a></li>
+            <li><a href="#"><img src="https://img.icons8.com/ios/50/000000/instagram-new--v1.png"/></a></li>
+    	    <li><a href="#"><img src="https://img.icons8.com/ios/50/000000/youtube.png"/></a></li>
+		</ul>
+	</div>
+</footer> -->
+{% block content %}
+
+{% endblock %}
+</body>
+</html>

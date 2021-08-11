@@ -1,0 +1,193 @@
+{% extends "layout.html" %}
+
+
+{% block style %}
+	<!-- style -->
+<style type="text/css">
+*{
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	font-style: bold;
+	box-sizing: border-box;
+    font-family: Georgia, serif;
+    cursor: pointer;
+}
+
+h2{
+    color: white;
+    font-size: 35px;
+    margin: 20px;;
+    font-weight: 700;
+    text-align: center;
+}
+.bttn1{	
+    position: relative;
+	display: inline-block;
+	font-weight: bold;
+	padding: 0px 26px;
+	margin: 9px 5px;
+	/* color: white; */
+    color: black;
+	text-transform: uppercase;
+	text-decoration: none;
+	transition: 0.6s ease;
+	font-size: 18px;
+	letter-spacing: 2px;
+	border-radius: 40px;
+	background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgb(247, 125, 125,1)0%, rgba(0,212,255,1)100% );
+}
+
+.bttn1:hover{
+	background: linear-gradient(90deg, rgb(250, 142, 147,1) 0%, rgb(127, 255, 206,1)35%, rgb(247, 125, 125,1)100% );
+    color: black;
+}
+
+ 
+.bttn{
+	position: relative;
+	display: inline-block;
+	font-weight: bold;
+	padding: 0px 26px;
+	margin: 9px 5px;
+	color: black;
+	text-transform: uppercase;
+	text-decoration: none;
+	transition: 0.6s ease;
+	font-size: 18px;
+	letter-spacing: 2px;
+	border-radius: 40px;
+	background: linear-gradient(90deg, rgba(0,212,255,1) 0%, rgb(247, 125, 125,1)0%, rgba(0,212,255,1)100% );
+}
+
+.bttn:hover{
+	background: linear-gradient(90deg, rgb(250, 142, 147,1) 0%, rgb(127, 255, 206,1)35%, rgb(247, 125, 125,1)100% );
+}
+
+/* ..nav li:hover{ 
+    background: #ff553b;
+}
+
+..nav1 li:hover{ 
+    background: #ff553b;
+} */
+
+.nav{
+    background-color: gray;
+	width: 65%;
+    margin: 8% 9%;
+    height: 20%;
+}
+
+.nav ul{
+	list-style-type: none;
+	margin-top: 20px;
+    margin-right: 40px;
+
+}
+
+.nav ul li{
+	display: inline-block;
+	/* list-style: none; */
+}
+
+.nav ul li{
+    font-size: 26px;
+	text-decoration: none;
+	color: #fff;
+	padding: -7px 20px;
+	border: 1px solid transparent;
+	transition: 0.6s ease;
+	font-weight: bold;
+}
+
+.nav ul li:hover{
+	color: #000;
+}
+
+
+.nav1{
+    background-color: gray;
+	width: 53%;
+    margin: 10% 9%;
+    height: 20%;
+}
+
+.nav1 ul{
+	list-style-type: none;
+	margin-top: 20px;
+    margin-right: 40px;
+
+}
+
+.nav1 ul li{
+	display: inline-block;
+	/* list-style: none; */
+}
+
+.nav1 ul li{
+    font-size: 26px;
+	text-decoration: none;
+	color: #fff;
+	padding: 5px 20px;
+	border: 1px solid transparent;
+	transition: 0.6s ease;
+	font-weight: bold;
+}
+
+.nav1 ul li:hover{
+	color: #000;
+}
+
+body{
+    display:flex;
+    flex-direction:column;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    /*padding: 3px 200px;*/
+    height:300px;
+    /*justify-content:center;*/
+    /*align-items: center;*/
+}
+
+body::before{content: "";
+    position: absolute;
+    background:url("{{url_for('static',filename='batch.jpg')}}") no-repeat center center/cover;
+    height: 100%;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    z-index:-1;
+    /* opacity: 0.89; */
+}
+
+</style>
+{% endblock %}
+
+{% block content %}
+
+<h2>Batch timing</h2>
+<div class="drop">
+    <form action="{{url_for('batches')}}" method="POST" >
+        <div class="mssg">{{msg}}</div>
+        <div class="nav">    
+            <ul>
+                <li>Regular Batches</li>
+                <a href="{{url_for('kids')}}" class="bttn"><li>Kids</li></a> 
+                <a href="{{url_for('junior')}}" class="bttn"><li>Junior</li></a> 
+                <a href="{{url_for('adult')}}" class="bttn"><li>Adult</li></a>
+                <a href="{{url_for('women')}}" class="bttn"><li>Women</li></a>
+            </ul>
+        </div>
+        <div class="nav1">
+            <ul>
+                <li>Weekend Batches</li>
+                <a href="{{url_for('fitness')}}" class="bttn1"><li>Fitness</li></a> 
+                <a href="{{url_for('couple')}}" class="bttn1"><li>Couple</li></a>
+            </ul>
+        </div>
+    </form>
+</div>	  
+{% endblock %}

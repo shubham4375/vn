@@ -1,0 +1,293 @@
+{% extends "layout.html" %}
+
+
+{% block style %}
+	<!-- style -->
+<style type="text/css">
+*{
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	font-style: bold;
+	box-sizing: border-box;
+	font-family: 'Courier New', sans-serif;
+}
+
+body{
+    display:flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    flex-direction:column;
+    /*padding: 3px 200px;*/
+    height:300px;
+    background: linear-gradient(90deg, rgb(205, 247, 255) 0%, rgb(240, 247, 244)35%, rgb(216, 248, 255)100% );
+}
+
+.mar{
+    margin: 10px;
+}
+
+p{
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+    font-size: 28px;
+}
+
+.row {
+  display: flex;
+  background: none;
+  flex-wrap: wrap;
+  margin: 0 150px;
+}
+
+.col-75 {
+  align-items: center;
+  /* padding: 0 16px; */
+  padding: 12px;
+  /* margin: 10px 0; */
+  margin-left: 20%;
+  /* border: none; */
+  width: 65%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.col-50 {
+  flex: 50%;
+  padding: 0 16px;
+}
+
+.container {
+  background-color: none;
+  padding: 5px 20px 15px 20px;
+  border: 1px;
+  border-radius: 3px;
+  margin-left: 10%;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px 12px;
+  border: 1px solid #ccc;
+  border-radius: 1px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+/* @media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+} */
+</style>
+{% endblock %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+{% block content %}
+<div class="mar">
+    <div class="row">
+        <div class="container">
+        <form action="/action_page.php">
+            <div class="col-75">
+                <h1>Payment Details</h1>
+                <label for="fname"><b>Accepted Cards</b></label>
+                <div class="icon-container">
+                    <i class="fa fa-cc-visa" style="color:navy;"></i>
+                    <i class="fa fa-cc-amex" style="color:blue;"></i>
+                    <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                    <i class="fa fa-cc-discover" style="color:orange;"></i>
+                </div>
+                <label for="cname">Name on Card</label>
+                <input type="text" id="cname" name="cardname" placeholder="First Middle Last">
+                <label for="ccnum">Credit card number</label>
+                <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                <label for="expmonth">Exp Month</label>
+                <input type="text" id="expmonth" name="expmonth" placeholder="September">
+                <div class="row">
+                    <div class="col-50">
+                        <label for="expyear">Exp Year</label>
+                        <input type="text" id="expyear" name="expyear" placeholder="2018">
+                    </div>
+                    <div class="col-50">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" name="cvv" placeholder="352">
+                    </div>
+                    <input type="submit" value="Pay" class="btn">
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+    <p>online payment is not avilable for kid batch chooes offline mode.</p>
+</div>
+{% endblock %}
+
+
+
+<form action="{{url_for('batches')}}" method="POST" >
+  <div class="mssg">{{msg}}</div>
+  <div class="nav">    
+      <ul  style="display: flex;">
+          <li>Regular Batches</li>
+      <div class="batch">
+         <div><label for="Kids">Kids</label> </div><br>
+          <select name="Kids" id="Kids" required="1" style="margin-left: -30px;  margin-top: 20px; width: 200px; height: 33px">
+              <option value="#">Select Time</option>
+              <option value="11 AM - 12 AM">11 AM - 12 AM</option>
+              <option value="5 PM - 6 PM">5 PM - 6 PM</option>
+              <!-- <option value="#"></option> -->
+          </select>
+      </div>
+      <div class="batch1">
+          <label for="Junior">Junior</label><br>
+          <select name="Junior" id="Junior" required="1" style="margin-left: -59px; margin-top: 20px; width: 200px; height: 33px">
+              <option value="#">Select Time</option>
+              <option value="6 PM - 7 PM">6 PM - 7 PM</option>
+              <!-- <option value="#"></option> -->
+              <!-- <option value="#"></option> -->
+          </select>
+      </div>
+      <div class="batch2">
+          <label for="Women">Women</label><br>
+          <select name="Women" id="Women" required="1"  style="margin-left: -55px; margin-top: 20px; width: 200px; height: 33px">
+              <option value="#">Select Time</option>
+              <option value="7 AM - 8 AM">7 AM - 8 AM</option>
+              <option value="8 AM - 9 AM">8 AM - 9 AM</option>
+              <!-- <option value="#"></option> -->
+              <!-- <option value="#"></option> -->
+          </select>
+      </div>
+      <div class="batch3">
+          <label for="Adult">Adult</label><br>
+          <select name="Adult" id="Adult" required="1"  style="margin-left: -45px; margin-top: 20px; width: 200px; height: 33px">
+              <option value="#">Select Time</option>
+              <option value="9 AM - 10 AM">9 AM - 10 AM</option>
+              <option value="10 AM - 11 AM">10 AM - 11 AM</option>
+              <option value="4 PM - 5 PM">4 PM - 5 PM</option>
+              <option value="7 PM - 8 PM">7 PM - 8 PM</option>
+          </select>
+      </div>
+      </ul>
+  </div>
+  <div class="nav1">
+      <ul style="display: flex;">
+          <li>Weekend Batches</li>
+      <div class="batch4">
+          <label for="couple">Couple</label><br>
+          <select name="couple" id="couple" required="1"  style="margin-left: -60px; margin-top: 20px; width: 200px; height: 33px">
+              <option value="#">Select Time</option>
+              <option value="5 PM - 6 PM">5 PM - 6 PM</option>
+              <option value="7 PM - 8 PM">7 PM - 8 PM</option>
+              <!-- <option value="#"></option> -->
+              <!-- <option value="#"></option> -->
+          </select>
+      </div>
+      <div class="batch5">
+          <label for="Fitness">Fitness</label><br>
+          <select name="Fitness" id="Fitness" required="1"  style="margin-left: -65px; margin-top: 20px; width: 200px; height: 33px">
+              <option value="#">Select Time</option>
+              <option value="7 Am - 8 AM">7 Am - 8 AM</option>
+              <option value="8 Am - 9 AM">8 Am - 9 AM</option>
+              <!-- <option value="#"></option> -->
+              <!-- <option value="#"></option> -->
+          </select>
+      </div>
+      </ul>
+  </div>
+
+
+  
+</form>
+
+
+<div class="time">
+  <h3>Select time</h3>
+  <div class="select">
+      <ul>
+          <li><a href=""></a></li>
+          <li><a href=""></a></li>
+      </ul>
+  </div>
+</div>
+
+
+if request.method =='POST':
+Kids = request.form.get['Kids']
+Junior = request.form.get['Junior']
+Women = request.form.get['Women']
+Adult = request.form.get['Adult']
+couple = request.form.get['couple']
+Fitness = request.form.get['Fitness']
+cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+cursor.execute('SELECT * FROM kids')
+kidsdata = cursor.fetchall()
+
+return render_template('batches.html',kidsdata=kidsdata)
+
+select_signup = """SELECT * FROM signup"""
+cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+cursor.execute(select_signup)
+result = cursor.fetchall()
+
+p = []
+
+tbl = "<tr><td>ID</td><td>Name</td><td>Email</td><td>Phone</td></tr>"
+p.append(tbl)
+
+for row in result:
+  username = "<tr><td>%s</td>"%row[0]
+  p.append(username)
+  b = "<td>%s</td>"%row[1]
+  p.append(b)
+  c = "<td>%s</td>"%row[2]
+  p.append(c)
+  d = "<td>%s</td></tr>"%row[3]
+  p.append(d)
+
+filename = 'event2.html'
+
+def main(contents, filename):
+  output = open(filename,"w")
+  output.write(contents)
+  output.close()
+
+main(ContentRange, filename)    
+webbrowser.open(filename)
+
+if(mysql.connection.is_connected()):
+  cursor.close()
+  mysql.connection.close()
+  print("MySQL connection is closed.")
+
+
+
+  {{url_for('event2')}}
+

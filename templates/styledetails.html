@@ -1,0 +1,271 @@
+{% extends "layout2.html" %}
+
+{% block style %}
+	<!-- style -->
+<style type="text/css">
+
+</style>
+{% endblock %}
+
+{% block content %}
+<div id="main-page-content">
+            <div class="container-fluid">
+
+                {% block body %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col md-12" style="width: 88%;">
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target=#mymodal
+                                style="margin-right: 10%;"> Add New Data</button>
+
+                            {% with messages = get_flashed_messages() %}
+
+                            {%if messages%}
+
+                            {%for message in messages%}
+
+                            <div class="alert alert-success alert-dismissable" role="alert"
+                                style="display: inline-block;">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="close">
+
+                                    <span aria-hidden="true">x</span>
+
+
+                                </button>
+
+                                {{message}}
+
+                            </div>
+
+
+
+                            {%endfor%}
+                            {%endif%}
+                            {%endwith%}
+
+                            <table class="table table-striped table-bordered table-hover">
+                                <tr>
+                                    <th>Style id</th>
+                                    <th>iamge name</th>
+                                     <th>image info</th>
+
+
+
+                                    <th>Action</th>
+                                </tr>
+                                {% for product in styledetails %}
+                                <tr>
+                                    <td>{{product.idstyle}}</td>
+
+                                    <td>{{product.iamgename}}</td>
+                                    <td>{{product.iamgeinfo}}</td>
+
+
+
+
+                                    <td>
+                                        <a href="/updatestyledetails/{{product.loginid}}" class="btn btn-xs" data-toggle="modal"
+                                            data-target=#modaledit{{product.loginid}}><button type="button"
+                                                class="btn btn-warning btn-default btn-sm">
+                                                <span class="glyphicon glyphicon-pencil"></span> Edit
+                                            </button></a>
+
+                                        <a href="/deletestyledetails/{{product.loginid}}" class="btn btn-xs"
+                                            onclick="return confirm ('Are you sure to delete?')"><button type="button"
+                                                class="btn btn-danger btn-default btn-sm">
+                                                <span class="glyphicon glyphicon-trash"></span> Delete
+                                            </button></a>
+                                    </td>
+                                </tr>
+
+
+
+
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div id="modaledit{{product.loginid}}" class="modal fade" role="dialog">
+
+                        <div class="modal-dialog">
+
+                            <div class="modal-content">
+
+                                <div class="modal-header" style="background-color: rgb(19, 139, 162);">
+
+                                    <button type="button btn-danger" class="close" data-dismiss="modal">&times;</button>
+
+                                    <h4 class="modal-title" style="color: whitesmoke;">  Update Data</h4>
+
+
+                                </div>
+                                <div class="modal-body">
+
+                                    <form action="{{url_for('updatestyledetails')}}" method="POST" enctype="multipart/form-data">
+
+
+
+                                        <div class="form-group">
+
+                                            <label>Id:</label>
+                                            <input type="text" class="form-control" name="loginid" value="{{product.loginid}}" readonly>
+                                        </div>
+
+
+
+
+                                        <div class="form-group">
+
+                                            <label>User Name:</label>
+                                            <input type="text" class="form-control" name="username"
+                                                value="{{product.username}}">
+                                        </div>
+
+
+
+
+                                        <div class="form-group">
+
+                                            <label>Password:</label>
+                                            <input type="text" class="form-control" name="password" value="{{product.password}}" >
+                                        </div>
+
+                                        <div class="form-group">
+
+                                            <label>Email:</label>
+                                            <input type="text" class="form-control" name="email"
+                                                value="{{product.email}}">
+                                        </div>
+                                        <div class="form-group">
+
+                                            <button class="btn btn-primary" type="submit">
+                                                Update Data
+                                            </button>
+                                        </div>
+
+                                    </form>
+
+
+
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                                        Close
+                                    </button>
+
+
+                                </div>
+
+                            </div>
+
+
+
+
+                        </div>
+
+
+
+
+                    </div>
+                    {%endfor%}
+                    </table>
+
+                    <div id="mymodal" class="modal fade" role="dialog">
+
+                        <div class="modal-dialog">
+
+                            <div class="modal-content">
+
+                                <div class="modal-header" style="background-color: rgb(19, 139, 162);">
+
+                                    <button type="button btn-danger" class="close" data-dismiss="modal">&times;</button>
+
+                                    <h4 class="modal-title" style="color: whitesmoke;"> Please Insert Data</h4>
+
+
+                                </div>
+                                <div class="modal-body">
+
+                                    <form action="{{url_for('insertstyledetails')}}" method="POST" enctype="multipart/form-data">
+
+
+
+                                          <div class="form-group">
+
+                                            <label>Image</label>
+                                            <input type="file" class="form-control" name="image" required>
+                                        </div>
+
+
+
+
+                                        <div class="form-group">
+
+                                            <label>Info:</label>
+                                            <input type="text" class="form-control" name="info" required >
+                                        </div>
+                                        <div class="form-group">
+
+                                            <button class="btn btn-primary" type="submit">
+                                                Insert Data
+                                            </button>
+                                        </div>
+
+                                    </form>
+
+
+
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                                        Close
+                                    </button>
+
+
+                                </div>
+
+                            </div>
+
+
+
+
+                        </div>
+
+
+
+
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+  </div>
+    {% endblock %}
+
+{% endblock %}
+
+
+

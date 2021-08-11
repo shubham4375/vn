@@ -1,0 +1,352 @@
+
+<head>
+<style>
+    
+    *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+
+.div4{
+  box-sizing: content-box;
+  border: 1px solid gray;
+  width: 22%;
+  float: right;
+  border-radius: 25px;
+  box-shadow:2px 2px 8px 0 rgba(5, 104, 18, 0.692), 0 4px 8px 0 rgba(10, 2, 29, 0.932);
+  margin-top: 50px;
+  margin-right: 20px;
+  
+}
+
+
+.Book{
+  width:90%;
+  background-image: linear-gradient( 111.2deg,  rgb(98, 3, 122) 1.7%, rgba(245,49,191,1) 98.7% );
+  transition:ease-in-out;
+  border:1px solid hidden;
+  box-sizing: border-box;
+  border-radius: 15px;
+  text-align: center;
+float: right;
+margin-top: -118px;
+margin-right: 15px;
+margin-bottom: 13px;
+  box-shadow:0 2px 8px 0 rgba(1, 1, 17, 0.692), 0 4px 8px 0 rgba(8, 2, 22, 0.932);
+  font-family: 'Courier New', Courier, monospace;
+
+}
+
+.Book:hover{
+  background-image: linear-gradient(  rgba(245,49,191,1) 98.7% , 111.2deg,  rgba(232,5,5,1) 1.7%);
+
+}
+
+.Book h1{
+  margin-top: 20px;
+  color:white;
+  font-size: 30px;
+  width: 100%;
+  text-transform: uppercase;
+  text-shadow:   1px 3px 19px 3px  gray;
+  font-family: 'Courier New', Courier, monospace;
+
+}
+
+.inputs input{
+ border: none;
+  padding: 8px 0;
+  width: 90%;
+  border-radius: 4px;
+  margin-top: 8px;
+  font-size: 15px;
+  outline: none;
+  height: 5vh;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+
+.inputs label{
+  display: block;
+  text-align: left;
+  margin-left: 10px;
+  margin-top: 8px;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.desc{
+  box-sizing: border-box;
+  border: 2px solid white;
+  align-items: center;
+  border-radius: 40px;
+  width: 160px;
+  height: 8vh;
+  box-shadow:3px 3px 3px 0px rgb(2, 11, 94);
+}
+
+
+
+
+.btn{
+background: rgb(252, 235, 5);
+box-sizing: border-box;
+border-radius: 40px;
+border: none;
+
+width:150px;
+color: rgb(2, 1, 32);
+height: 5vh;
+font-weight:bold;
+text-transform: uppercase;
+font-size: 20px;
+letter-spacing: 2px;
+font-family: 'Courier New', Courier, monospace;
+}
+
+
+.btn:hover:hover{
+  background: rgb(35, 204, 35);
+  color: rgb(2, 1, 32);
+}
+
+
+.msg{
+  font-size: 18px;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+
+
+.inputs input[type=text]
+{
+    color:black;
+    font-size: 25px;
+    
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+::placeholder{
+    color:black;
+    font-size: 20px;
+    padding: 10px;
+   margin-left: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* main division for the images slider*/
+
+.main{
+    width:60%;
+    height: 100%;
+}
+
+.main .track{
+  margin-left: 50px;
+  
+}
+
+.main .track ul{
+    position: relative;
+    list-style-type: none;
+    padding: 0;
+    height: 250px;
+    width: 70%;
+}
+
+.main .track ul li{
+    position:absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    height: 400px;
+    transition: opacity .7s ease;
+}
+
+.main .track ul li:first-child{
+    opacity: 1;
+
+}
+.main .track ul li img{
+    width: 150%;
+    height: 100%;
+    border:1px solid gray;
+    box-shadow: 2px 3px 10px rgb(57, 52, 121);
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.slides{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 5px;
+    margin-top: 200px;
+}
+
+.slides a{
+
+    height: 100px;
+    margin-left: 30px;
+}
+.slides a img{
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-left: 20px;
+}
+.slides a img:hover{
+  border: 3px solid yellow;
+}
+
+.main .track ul li:target{
+    opacity: 1;
+}
+
+/* information about flats*/
+.div5 p{
+
+  color: #140224;
+  font-size: 40px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  margin-left: 30px;
+  
+}
+
+.property{
+  width: 40%;
+  margin-left: 30px;
+  display: inline-block;
+
+}
+.property_info{
+  margin-left: 20px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 2px 3px 10px gray;
+}
+
+.property_info .space{
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  background-image: radial-gradient( circle farthest-corner at 22.4% 21.7%,  rgba(4,189,228,1) 0%, rgba(2,83,185,1) 100.2% );
+ 
+} 
+
+.property_info .space1{
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  background-image: radial-gradient( circle farthest-corner at 22.4% 21.7%,  rgba(4,189,228,1) 0%, rgba(2,83,185,1) 100.2% );
+ 
+} 
+
+
+.property_info .space1:hover{
+background: radial-gradient( circle farthest-corner at 22.4% 50.7%, rgba(2,83,185,1) 0%,  rgba(4,189,228,1) 100.2% );
+transition: all 6s ease-in;
+}
+
+
+.property_info .space:hover{
+background: radial-gradient( circle farthest-corner at 22.4% 50.7%, rgba(2,83,185,1) 0%,  rgba(4,189,228,1) 100.2% );
+transition: all 6s ease-in;
+}
+
+.property p{
+  font-size: 20px;
+  margin-left: 20px
+}
+
+ h3{
+  font-size: 30px;
+  font-family: 'Courier New', Courier, monospace;
+  margin-left:30px;
+}
+
+.property p span{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+  font-weight: bold; 
+  
+}
+
+
+
+button{
+background: rgb(252, 235, 5);
+border:none;
+border-radius: 40px;
+margin-left:50px;
+width:150px;
+color: white;
+height: 6vh;
+font-weight:bold;
+text-transform: uppercase;
+font-size: 14px;
+font-family: 'Courier New', Courier, monospace;
+
+}
+
+
+button a{
+	color: rgb(2, 4, 31);
+	text-decoration: none;
+	font-size: 20px;
+}	
+
+button:hover,button a:hover{
+	background:rgb(35, 204, 35);
+    color: rgb(2, 1, 19);
+}
+
+
+</style>
+</head>
+<body>
+  
+
+
+<main>
+
+
+ 
+  <br><br> <br> 
+    <div class="div2"> 
+      <div class="main">
+        <div class="track">
+            <ul>
+                <li id="slide1"> <img src="{{url_for('static',filename='vn3.JPG')}}" alt=""> </li>
+                <li id="slide2"> <img src="{{url_for('static',filename='vn2.JPG')}}" alt=""> </li>
+             
+                <br><br><br><br><br><br><br><br><br><br><br>
+            </ul>
+        </div>
+        <br>
+        <div class="slides">
+            <a href="#slide1"> <img src="{{url_for('static',filename='vn3.JPG')}}" alt=""></a>
+            <a href="#slide2"> <img src="{{url_for('static',filename='vn2.JPG' )}}" alt=""></a>
+        </div>
+    </div>
+     </div>  
+<!--Appoinment desk design-->
+   
+</body>

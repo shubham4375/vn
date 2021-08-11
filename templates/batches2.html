@@ -1,0 +1,286 @@
+{% extends "layout.html" %}
+
+
+{% block style %}
+	<!-- style -->
+<style type="text/css">
+
+*{
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	font-style: bold;
+	box-sizing: border-box;
+    font-family: Georgia, serif; 
+}
+
+
+.nav ul{
+    list-style: none;
+}
+
+.nav1 ul{
+    list-style: none;
+}
+
+.nav{
+    display: inline-block;
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.nav1{
+    display: inline-block;
+    text-align: center;
+    position: absolute;
+    top: 65%;
+    left: 37%;
+    transform: translate(-50%,-50%);
+}
+
+/* .nav li:hover{ 
+    background: #ff553b;
+}
+
+.nav1 li:hover{ 
+    background: #ff553b;
+} */
+
+.nav > ul{
+    margin: 0;
+    background: #313131;
+    color: #fff;
+    width: 1240px;
+    text-transform:uppercase;
+    font-weight: 900;  
+}
+
+.nav1 > ul{
+    margin: 0;
+    background: #313131;
+    color: #fff;
+    width: 720px;
+    text-transform:uppercase;
+    font-weight: 900;  
+}
+
+.nav > ul > li{
+    position: relative;
+    font-size: 22px;
+    letter-spacing: 2px;
+    float: left;
+    width: 200px;
+    height: 50px;
+    line-height: 35px;
+}
+
+.nav1 > ul > li{
+    position: relative;
+    font-size: 22px;
+    letter-spacing: 2px;
+    float: left;
+    width: 200px;
+    height: 50px;
+    line-height: 35px;
+}
+
+.batch{
+    
+    padding-top: 10px;
+    /* background-color: springgreen; */
+    width: 260px;
+    height: 70px;
+    /* padding-left: 10px; */
+    display: flex;
+    /* margin: 20px; */
+    text-align: center;
+}
+
+.batch1{
+    
+    padding-top: 10px;
+    /* background-color: springgreen; */
+    width: 260px;
+    height: 70px;
+    /* padding-left: 10px; */
+    display: flex;
+    /* margin: 20px; */
+    text-align: center;
+    /* margin-left: 4%; */
+}
+
+.batch2{
+    
+    padding-top: 10px;
+    /* background-color: springgreen; */
+    width: 260px;
+    height: 70px;
+    /* padding-left: 10px; */
+    display: flex;
+    /* margin: 20px; */
+    text-align: center;
+    /* margin-left: 6%; */
+}
+
+.batch3{
+    
+    padding-top: 10px;
+    /* background-color: springgreen; */
+    width: 260px;
+    height: 70px;
+    /* padding-left: 10px; */
+    display: flex;
+    /* margin: 20px; */
+    text-align: center;
+    /* margin-left: 8%; */
+}
+
+.batch4{
+    
+    padding-top: 10px;
+    /* background-color: springgreen; */
+    width: 260px;
+    height: 70px;
+    /* padding-left: 10px; */
+    display: flex;
+    /* margin: 20px; */
+    text-align: center;
+}
+
+.batch5{
+    
+    padding-top: 10px;
+    /* background-color: springgreen; */
+    width: 260px;
+    height: 70px;
+    /* padding-left: 10px; */
+    display: flex;
+    /* margin: 20px; */
+    text-align: center;
+    /* margin-left: 4%; */
+}
+
+select{
+    color: white;
+    background-color: black;
+    border-style: none;
+    transition: 0.8s ease;
+    
+}
+
+select:hover{
+    color: black;
+    background-color: skyblue;
+    transition: ease-in-out;
+}
+
+body{
+    display:flex;
+    flex-direction:column;
+    /*padding: 3px 200px;*/
+    height:300px;
+    /*justify-content:center;*/
+    /*align-items: center;*/
+}
+
+body::before{content: "";
+    position: absolute;
+    background:url("{{url_for('static',filename='batch.jpg')}}") no-repeat center center/cover;
+    height: 100%;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    z-index:-1;
+    /* opacity: 0.89; */
+}
+
+</style>
+{% endblock %}
+
+{% block content %}
+ 
+<h2>Batch timing</h2>
+<div class="drop">
+    <form action="{{url_for('batches')}}" method="POST" >
+        <div class="mssg">{{msg}}</div>
+        <div class="nav">    
+            <ul  style="display: flex;">
+                <li>Regular Batches</li>
+            <div class="batch">
+               <div><label for="Kids">Kids</label> </div><br>
+                <select name="Kids" id="Kids" required="1" style="margin-left: -30px;  margin-top: 20px; width: 200px; height: 33px">
+                    <option value="#">Select Time</option>
+                    {% for product in kidsdata %}
+                    <option >{{ product.kidsbatchtime }}</option>
+                    {% endfor %}
+                    <!-- <option value="#"></option> -->
+                </select>
+            </div>
+            <div class="batch1">
+                <label for="Junior">Junior</label><br>
+                <select name="Junior" id="Junior" required="1" style="margin-left: -59px; margin-top: 20px; width: 200px; height: 33px">
+                    <option value="#">Select Time</option>
+                    {% for product in juniordata %}
+                    <option >{{ product.juniorbatchtime }}</option>
+                    {% endfor %}
+                    <!-- <option value="#"></option> -->
+                    <!-- <option value="#"></option> -->
+                </select>
+            </div>
+            <div class="batch2">
+                <label for="Women">Women</label><br>
+                <select name="Women" id="Women" required="1"  style="margin-left: -55px; margin-top: 20px; width: 200px; height: 33px">
+                    <option value="#">Select Time</option>
+                    {% for product in womendata %}
+                    <option >{{ product.womenbatchtime }}</option>
+                    {% endfor %}
+                    <!-- <option value="#"></option> -->
+                    <!-- <option value="#"></option> -->
+                </select>
+            </div>
+            <div class="batch3">
+                <label for="Adult">Adult</label><br>
+                <select name="Adult" id="Adult" required="1"  style="margin-left: -45px; margin-top: 20px; width: 200px; height: 33px">
+                    <option value="#">Select Time</option>
+                    {% for product in adultdata %}
+                    <option >{{ product.adultbatchtime }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            </ul>
+        </div>
+        <div class="nav1">
+            <ul style="display: flex;">
+                <li>Weekend Batches</li>
+            <div class="batch4">
+                <label for="couple">Couple</label><br>
+                <select name="couple" id="couple" required="1"  style="margin-left: -60px; margin-top: 20px; width: 200px; height: 33px">
+                    <option value="#">Select Time</option>
+                    {% for product in coupledata %}
+                    <option >{{ product.couplebatchtime }}</option>
+                    {% endfor %}
+                    <!-- <option value="#"></option> -->
+                    <!-- <option value="#"></option> -->
+                </select>
+            </div>
+            <div class="batch5">
+                <label for="Fitness">Fitness</label><br>
+                <select name="Fitness" id="Fitness" required="1"  style="margin-left: -65px; margin-top: 20px; width: 200px; height: 33px">
+                    <option value="#">Select Time</option>
+                    {% for product in fitnessdata %}
+                    <option >{{ product.fitnessbatchtime }}</option>
+                    {% endfor %}
+                    <!-- <option value="#"></option> -->
+                    <!-- <option value="#"></option> -->
+                </select>
+            </div>
+            </ul>
+        </div>
+        <Button>submit</Button>
+    </form>
+</div>
+{% endblock %}

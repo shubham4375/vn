@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style type="text/css">
+*{
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	font-style: bold;
+	box-sizing: border-box;
+	font-family: 'Courier New', sans-serif;
+}
+
+body{
+	display:flex;
+    flex-direction:column;
+    /*padding: 3px 200px;*/
+    height:300px;
+    /*justify-content:center;*/
+    /*align-items: center;*/
+}
+
+body::before{content: "";
+    position: absolute;
+    background:url("{{url_for('static',filename='4.jpg')}}") no-repeat center center/cover;
+    height: 100%;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    z-index:-1;
+    /*opacity: 0.89;*/
+}
+
+
+  body, html {
+  height: 100%;
+  margin: 0;
+}
+main{
+   float: right;
+   margin: 20px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+  width: 60%;
+  height: 90%;
+
+}
+
+.h-first{
+    color: #ffffcc;
+    font-weight: bold;
+    margin: 5px;
+    font-size: 40px;
+    margin: 20px;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 300px;
+  height: 250px;
+  padding: 20px;
+}
+
+.btn1{
+    width: 100%;
+	height: 50px;
+	border: 1px solid;
+	background: #2691d9;
+	border-radius: 25px;
+	font-size: 18px;
+	color: #e9f4fb;
+	font-weight: 700;
+	cursor: pointer;
+	outline: none;
+}
+
+input{
+  width: 250px;
+  padding: 10px;
+  color: black;
+  font-weight: black;
+  text-align: center;
+  border-radius: 10px;
+  border:none;
+  background-color: white;
+}
+
+::placeholder {
+  color: black;
+  opacity: 1; /* Firefox */
+}
+
+@media screen and (max-width: 768px) {
+
+
+main{
+   float: none;
+   margin: 0px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+  width: auto;
+  height: 80%;
+
+}
+
+}
+
+
+@media screen and (max-width: 450px) {
+main{
+   float: none;
+   margin: 0px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+  width: auto;
+  height: 80%;
+
+}
+
+}
+
+</style>
+</head>
+<body>
+
+
+<main>
+
+         <div class="content">
+            <header>Admin Login </header>
+             <div class="msg" style="font-size:30px; color:#f09d51;font-family: 'Montserrat',sans-serif; ">{{ msg }}</div>
+            <form action="{{ url_for('adminlogin') }}"method="post">
+               <div class="field">
+                  <span class="fa fa-user"></span>
+                  <input type="text" name="username" required placeholder="Username">
+               </div>
+               <div class="field space">
+                  <span class="fa fa-lock"></span>
+                  <input type="password" name="password" class="pass-key" required placeholder="Password">
+               </div>
+              <div class="pass">
+                  <a href="#"></a>
+               </div>
+               <div class="field">
+                  <input type="submit" value="Sign In">
+               </div>
+            </form>
+
+
+         </div>
+      </div>
+
+
+
+</main>
+
+</div>
+</body>
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700|Poppins:400,500&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.content{
+  position: absolute;
+  top: 50%;
+  left:50%;
+  z-index: 999;
+  text-align: center;
+  padding: 60px 32px;
+  width: 370px;
+  transform: translate(-50%,-50%);
+  background: rgba(255,255,255,0.04);
+  box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);
+}
+.content header{
+  color: white;
+  font-size: 33px;
+  font-weight: 600;
+  margin: 0 0 35px 0;
+  font-family: 'Montserrat',sans-serif;
+}
+.field{
+  position: relative;
+  height: 45px;
+  width: 100%;
+  display: flex;
+  background: rgba(255,255,255,0.94);
+}
+.field span{
+  color: #222;
+  width: 40px;
+  line-height: 45px;
+}
+.field input{
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #222;
+  font-size: 16px;
+  font-family: 'Poppins',sans-serif;
+}
+.space{
+  margin-top: 16px;
+}
+.show{
+  position: absolute;
+  right: 13px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #222;
+  display: none;
+  cursor: pointer;
+  font-family: 'Montserrat',sans-serif;
+}
+.pass-key:valid ~ .show{
+  display: block;
+}
+.pass{
+  text-align: left;
+  margin: 10px 0;
+}
+.pass a{
+  color: white;
+  text-decoration: none;
+  font-family: 'Poppins',sans-serif;
+}
+.pass:hover a{
+  text-decoration: underline;
+}
+.field input[type="submit"]{
+  background: #f09d51;
+  border: 1px solid #f09d51;
+  color: white;
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Montserrat',sans-serif;
+  border-radius: 2px;
+}
+.field input[type="submit"]:hover{
+  background: white;
+  color: #f09d51;
+}
+.login{
+  color: white;
+  margin: 20px 0;
+  font-family: 'Poppins',sans-serif;
+}
+.links{
+  display: flex;
+  cursor: pointer;
+  color: white;
+  margin: 0 0 20px 0;
+}
+.links i{
+  font-size: 17px;
+}
+i span{
+  margin-left: 8px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-family: 'Poppins',sans-serif;
+}
+.signup{
+  font-size: 15px;
+  color: white;
+  font-family: 'Poppins',sans-serif;
+}
+.signup a{
+  color: #f09d51;
+  text-decoration: none;
+}
+.signup a:hover{
+  text-decoration: underline;
+}
+</style>
+
+</html>

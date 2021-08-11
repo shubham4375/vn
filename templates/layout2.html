@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block style %}
+
+    <title>Admin Page</title>
+
+
+    {% endblock %}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/mark.js/8.6.0/jquery.mark.min.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+        crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/iconmenu.css') }}">
+<style type="text/css">
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: white;
+        color: black;
+        text-align: center;
+    }
+
+    @media only screen and (max-width:300px) {
+
+        #navtext {
+            margin: 0% 0%;
+        }
+
+    }
+
+    @media only screen and (min-width: 300px) and (max-width:500px) {
+
+        #navtext {
+            margin: 0% 0%;
+        }
+
+    }
+
+    @media (min-width: 500px) and (max-width:800px) {
+
+        #navtext {
+            margin: 0% 0%;
+        }
+
+    }
+
+    @media (min-width: 800px) {
+
+        #navtext {
+            margin: 0px 482px;
+        }
+
+    }
+</style>
+
+</head>
+<body>
+
+
+
+    <div id="wrapper">
+
+        <nav class="navbar  navbar-fixed-top" style="background-color: #138ba2;">
+            <div class="container-fluid">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand" href="#menu-toggle" id="menu-toggle" style="color: #fdfdfd"> <span
+                            class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                        <span class="logo" id="navtext"></span>
+                    </a>
+                    <a href="{{ url_for('adminlogout') }}" id="logout" class="btn"style="color:white;font-size:28px; margin-left=50%">Logout</a>
+                </div>
+
+            </div>
+
+        </nav>
+
+        <div id="bootstrap-sidebar" class="light-theme text-menu">
+            <ul class="sidebar-nav">
+               <li> <a href="/adminhome"><img src="https://img.icons8.com/material-sharp/24/000000/medium-icons.png"/> <span
+                            class="menu-text">Home</span></a>
+                </li>
+                <li> <a href="/userdetails"><img src="https://img.icons8.com/ios-glyphs/25/000000/user--v1.png"/> User Details</a></li>
+                <li> <a href="/admindetails"><img src="https://img.icons8.com/material-rounded/24/000000/admin-settings-male.png"/> Admin Login</a></li>
+                <li> <a href="/contactdetails"><img src="https://img.icons8.com/ios-glyphs/25/000000/contact-card.png"/> Contact</a></li>
+
+ <li> <a href="/batchtimedetails"><img src="https://img.icons8.com/ios-filled/20/000000/dancing.png"/> Batch Time  </a></li>
+ <li> <a href="/kidsdetails"><img src="https://img.icons8.com/ios-filled/20/000000/dancing.png"/> Kids Details  </a></li>
+ <li> <a href="/juniordetails"><img src="https://img.icons8.com/ios-filled/20/000000/dancing.png"/> junior Details  </a></li>
+ <li> <a href="/womendetails"><img src="https://img.icons8.com/ios-filled/20/000000/dancing.png"/> Women Details  </a></li>
+ <li> <a href="/adultdetails"><img src="https://img.icons8.com/ios-filled/20/000000/dancing.png"/> Adult Details  </a></li>
+ <li> <a href="/fitnessdetails"><img src="https://img.icons8.com/ios-filled/20/000000/dancing.png"/> Fitness Details  </a></li>
+ <li> <a href="/coupledetails"><img src="https://img.icons8.com/ios-filled/20/000000/dancing.png"/> Couple Details  </a></li>
+ <!-- <li> <a href="/styledetails"><img src="https://img.icons8.com/ios-filled/20/000000/dancing.png"/> Style Details  </a></li> -->
+
+
+
+
+</ul>
+        </div>
+    </div>
+
+
+
+
+    <div class="footer">
+<!--        <p> © copyright V&N</p>-->
+    </div>
+
+
+{% block content %}
+
+{% endblock %}
+</body>
+</html>
+
+<script>
+    $(document).ready(function () {
+
+        if ($(window).width() >= 768) {
+
+            if ($('#bootstrap-sidebar').hasClass('icon-menu')) {
+                localStorage.setItem("default-padding", "60px");
+                $('#wrapper').css('padding-left', '60px');
+                console.log('icon');
+            }
+
+            else if ($('#bootstrap-sidebar').hasClass('text-menu')) {
+                localStorage.setItem("default-padding", "150px");
+                $('#wrapper').css('padding-left', '150px');
+                console.log('text');
+            }
+            else if ($('#bootstrap-sidebar').hasClass('big-icon-menu')) {
+                localStorage.setItem("default-padding", "100px");
+                $('#wrapper').css('padding-left', '100px');
+                console.log('big');
+            }
+            else {
+                $('#wrapper').css('padding-left', '80px');
+                localStorage.setItem("default-padding", "80px");
+                console.log('ntg');
+            }
+
+        }
+
+    });
+
+    $("#menu-toggle").click(function (e) {
+        e.preventDefault();
+        let default_padding = localStorage.getItem('default-padding');
+        var origin_padding = $("#wrapper").css("padding-left");
+        if (origin_padding == '0px') {
+            $('#wrapper').css('padding-left', default_padding);
+        }
+        else {
+            $('#wrapper').css('padding-left', '0px');
+        }
+        $("#wrapper").toggleClass("toggled");
+    });
+
+
+
+    window.onscroll = function () { myFunction() };
+
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+
+    function myFunction() {
+        if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+        } else {
+            navbar.classList.remove("sticky");
+        }
+    }
+
+
+
+
+
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+
+    for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var dropdownContent = this.nextElementSibling;
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        });
+    }
+
+
+
+    $(document).ready(function () {
+
+        $("#fileInput").change(function () {
+            var fileLength = this.files.length;
+            var match = ["image/jpeg", "image/png", "image/jpg", "image/gif"];
+            var i;
+            for (i = 0; i < fileLength; i++) {
+                var file = this.files[i];
+                var imagefile = file.type;
+                if (!((imagefile == match[0]) || (imagefile == match[1]) || (imagefile == match[2]) || (imagefile == match[3]))) {
+                    alert('Please select a valid image file (JPEG/JPG/PNG/GIF).');
+                    $("#fileInput").val('');
+                    return false;
+                }
+            }
+        });
+    });
+
+
+
+
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+
+    for (i = 0; i < dropdown.length; i++) {
+        dropdown[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var dropdownContent = this.nextElementSibling;
+            if (dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+            } else {
+                dropdownContent.style.display = "block";
+            }
+        });
+    }
+
+
+</script>
+
+
+
+
+
+
+
+
