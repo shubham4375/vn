@@ -22,9 +22,9 @@ app=Flask(__name__)
 app.secret_key = "your secret key"
 
 
-app.config['MYSQL_HOST'] = "localhost"
-app.config['MYSQL_USER'] = "root"
-app.config['MYSQL_PASSWORD'] ="root"
+app.config['MYSQL_HOST'] = "restaurant.c52jrjvcdvgp.us-east-2.rds.amazonaws.com"
+app.config['MYSQL_USER'] = "admin"
+app.config['MYSQL_PASSWORD'] ="Sysintello#2141"
 app.config['MYSQL_DB'] = "project"
 mysql = MySQL(app)
 
